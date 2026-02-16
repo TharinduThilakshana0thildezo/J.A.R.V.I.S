@@ -1,0 +1,44 @@
+app:
+  name: JARVIS Local
+  mode: offline
+
+llm:
+  provider: ollama
+  model: mistral
+  base_url: http://localhost:11434
+
+safety:
+  require_confirmations: true
+  allowlist_apps:
+    - "chrome"
+    - "code"
+    - "notepad"
+    - "explorer"
+  file_root: "e:/Education/J.A.R.V.I.S"  # boundary for file access
+  kill_switch_commands:
+    - "STOP"
+    - "KILL JARVIS"
+    - "EMERGENCY STOP"
+
+memory:
+  long_term_path: "memory/long_term.json"
+  skills_path: "memory/skills.json"
+  logs_path: "logs/actions.jsonl"
+
+voice:
+  enabled: true
+
+  stt:
+    model_path: "jarvis_ai/models/vosk-model-small-en-us-0.15"
+    sample_rate: 16000
+    push_to_talk_key: "right ctrl"
+
+  tts:
+    enabled: true
+    rate: 180
+    volume: 1.0
+
+vision:
+  ocr:
+    enabled: true
+    lang: "eng"

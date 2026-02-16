@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "preferences": {},
+  "entries": [
+    {
+      "entry_id": "mem_1771242642290",
+      "text": "open chrome",
+      "tags": [
+        "conversation",
+        "user_input"
+      ],
+      "embedding": {
+        "open": 0.7071067811865475,
+        "chrome": 0.7071067811865475
+      },
+      "timestamp": "2026-02-16T11:50:42.291052+00:00"
+    },
+    {
+      "entry_id": "mem_1771242642291",
+      "text": "Failed to complete task: open Chrome",
+      "tags": [
+        "reflection"
+      ],
+      "embedding": {
+        "failed": 0.4082482904638631,
+        "to": 0.4082482904638631,
+        "complete": 0.4082482904638631,
+        "task": 0.4082482904638631,
+        "open": 0.4082482904638631,
+        "chrome": 0.4082482904638631
+      },
+      "timestamp": "2026-02-16T11:50:42.291080+00:00"
+    }
+  ],
+  "tasks": [
+    {
+      "goal": "open chrome",
+      "outcome": "failed",
+      "timestamp": "2026-02-16T11:50:42.291089+00:00"
+    }
+  ]
+}
