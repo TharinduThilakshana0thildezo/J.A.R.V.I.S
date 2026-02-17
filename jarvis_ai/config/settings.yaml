@@ -3,9 +3,21 @@ app:
   mode: offline
 
 llm:
-  provider: ollama
-  model: mistral
-  base_url: http://localhost:11434
+  provider: ollama  # Options: hybrid, groq, ollama, openai
+  model: mistral    # Global fallback model
+  timeout: 300.0
+  
+  ollama:
+    base_url: http://localhost:11434
+    model: mistral
+    
+  groq:
+    api_key: "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"
+    model: "llama-3.3-70b-versatile"
+
+  openai:
+    api_key: "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"
+    model: "gpt-4o"
 
 safety:
   require_confirmations: true
@@ -14,6 +26,10 @@ safety:
     - "code"
     - "notepad"
     - "explorer"
+    - "msedge"
+    - "teams"
+    - "whatsapp"
+
   file_root: "e:/Education/J.A.R.V.I.S"  # boundary for file access
   kill_switch_commands:
     - "STOP"

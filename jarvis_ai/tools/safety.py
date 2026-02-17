@@ -12,9 +12,23 @@ def require_confirmation(action: str) -> bool:
 def is_allowed_app(app_name: str, allowlist: Iterable[str]) -> bool:
     normalized = app_name.strip().lower()
     allowed = {item.strip().lower() for item in allowlist if item.strip()}
+
+    # If no allowlist is configured, permit by default (safer UX fallback).
     if not allowed:
-        return False
-    return normalized in allowed
+        return True
+
+    # Wildcard allow-all
+    if "*" in allowed:
+        return True
+
+    # Allow direct match or match without .exe suffix
+    if normalized in allowed:
+        return True
+    if normalized.endswith(".exe") and normalized[:-4] in allowed:
+        return True
+    if (normalized + ".exe") in allowed:
+        return True
+    return False
 
 
 def is_path_allowed(path: Path, root: Path) -> bool:

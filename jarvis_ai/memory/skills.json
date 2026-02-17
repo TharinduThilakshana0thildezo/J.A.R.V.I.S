@@ -12,6 +12,54 @@
       "problem": "The task failed due to a dependency issue or cyclic plan.",
       "lesson": "Review the plan structure for potential dependency errors and ensure there are no cyclic dependencies.",
       "confidence": 0.7
+    },
+    {
+      "context": "User greeted Jarvis",
+      "problem": "None",
+      "lesson": "The user is interacting with the assistant",
+      "confidence": 1.0
+    },
+    {
+      "context": "Task involved moving the mouse",
+      "problem": "None",
+      "lesson": "Was able to execute the plan for moving the mouse to the specified location.",
+      "confidence": 1.0
+    },
+    {
+      "context": "The task required the local assistant to execute a plan, but no ready steps were found.",
+      "problem": "There was an issue with the planning process, either a dependency error or a cycle in the plan.",
+      "lesson": "Ensure that all dependencies are met before executing a plan and avoid creating cyclic plans.",
+      "confidence": 0.95
+    },
+    {
+      "context": "User requested 'ok thanks'.",
+      "problem": "An unknown action was encountered during the execution of the plan.",
+      "lesson": "Ensure all possible actions for a given user input are defined and correctly implemented.",
+      "confidence": 0.8
+    },
+    {
+      "context": "Understanding the task requirements",
+      "problem": "Lack of explicit statement of task goals",
+      "lesson": "Clearly state the task goals before proceeding",
+      "confidence": 0.8
+    },
+    {
+      "context": "Decision-making process for similar tasks",
+      "problem": "Insufficient training data for this specific task",
+      "lesson": "Continuously update and expand training data to improve decision-making",
+      "confidence": 0.85
+    },
+    {
+      "context": "Attempt to identify the assistant's name",
+      "problem": "Failed to find a suitable method to determine the assistant's name as no ready steps were available.",
+      "lesson": "Ensure all necessary steps and dependencies are prepared for tasks involving identification of the assistant's name.",
+      "confidence": 0.8
+    },
+    {
+      "context": "Task to retrieve personal information",
+      "problem": "Failed due to dependency issue or cyclic plan",
+      "lesson": "Ensure the planning algorithm is correctly handling dependencies and avoiding cyclic plans.",
+      "confidence": 0.9
     }
   ]
 }

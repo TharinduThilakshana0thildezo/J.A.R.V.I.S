@@ -25,7 +25,12 @@ def load_settings(path: Path) -> Dict[str, Any]:
     raw = path.read_text(encoding="utf-8")
     if yaml:
         return yaml.safe_load(raw) or {}
-    return json.loads(raw)
+    # Fallback: tolerate YAML-style files even without PyYAML
+    try:
+        return json.loads(raw)
+    except Exception:
+        print("[JARVIS] settings.yaml is YAML; install pyyaml or convert to JSON. Falling back to empty settings.", flush=True)
+        return {}
 
 
 def main() -> None:

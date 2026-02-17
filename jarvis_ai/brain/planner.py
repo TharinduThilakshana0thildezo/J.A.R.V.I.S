@@ -17,11 +17,24 @@ class PlanStep:
 
 
 class Planner:
-    def plan(self, client: LLMClient, goal: str) -> List[PlanStep]:
-        prompt = PLAN_PROMPT.format(goal=goal)
+    def plan(self, client: LLMClient, goal: str, history: str = "", memory: str = "") -> tuple[List[PlanStep], Optional[str]]:
+        prompt = PLAN_PROMPT.format(goal=goal, history=history, memory=memory)
         try:
             response = client.generate(prompt=prompt, system=SYSTEM_PROMPT)
-            payload = json.loads(response.text)
+            # If the local backend returns nothing, surface a user-facing fallback.
+            if not str(response.text).strip():
+                return [], "I could not get a reply from the local model. Please ensure Ollama is running and the model is pulled."
+            try:
+                payload = json.loads(response.text)
+            except json.JSONDecodeError:
+                # If model returns raw text instead of JSON, treat it as a direct response
+                print("[JARVIS][Planner] Model returned non-JSON response. Treating as direct chat.", flush=True)
+                return [], str(response.text).strip()
+            
+            # Fast path: direct response
+            if "response" in payload:
+                return [], str(payload["response"])
+
             steps = []
             for item in payload.get("steps", []):
                 steps.append(
@@ -31,11 +44,14 @@ class Planner:
                         depends_on=[str(dep) for dep in item.get("depends_on", [])],
                     )
                 )
-            return [step for step in steps if step.step_id and step.description] or [
-                PlanStep(step_id="step_1", description=goal)
-            ]
-        except Exception:
-            return [PlanStep(step_id="step_1", description=goal)]
+            # Fallback if steps is empty but no response field
+            result_steps = [step for step in steps if step.step_id and step.description]
+            if not result_steps:
+                 return [PlanStep(step_id="step_1", description=goal)], None
+            return result_steps, None
+        except Exception as e:
+            print(f"[JARVIS][Planner] LLM request failed: {e}", flush=True)
+            return [PlanStep(step_id="step_1", description=goal)], None
 
     def ready_steps(self, steps: List[PlanStep]) -> List[PlanStep]:
         completed = {step.step_id for step in steps if step.status == "done"}
