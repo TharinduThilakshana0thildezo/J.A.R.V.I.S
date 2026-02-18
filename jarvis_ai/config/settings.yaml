@@ -3,7 +3,7 @@ app:
   mode: offline
 
 llm:
-  provider: ollama  # Options: hybrid, groq, ollama, openai
+  provider: groq  # Options: hybrid, groq, ollama, openai
   model: mistral    # Global fallback model
   timeout: 300.0
   
@@ -32,6 +32,7 @@ safety:
 
   file_root: "e:/Education/J.A.R.V.I.S"  # boundary for file access
   kill_switch_commands:
+  
     - "STOP"
     - "KILL JARVIS"
     - "EMERGENCY STOP"

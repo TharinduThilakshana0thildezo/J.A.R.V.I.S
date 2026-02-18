@@ -22,6 +22,16 @@ except Exception:  # pragma: no cover
     vosk = None
 
 
+def is_stt_available() -> bool:
+    """Return True if all required STT dependencies are importable.
+
+    This lets the agent disable push-to-talk cleanly instead of repeatedly
+    throwing runtime errors when, for example, the keyboard hook cannot be
+    used on the current system.
+    """
+    return keyboard is not None and sd is not None and vosk is not None
+
+
 @dataclass
 class STTConfig:
     model_path: Path

@@ -25,7 +25,7 @@ from jarvis_ai.tools.system import kill_process, list_processes, system_stats
 from jarvis_ai.tools.web import http_get, http_post_json, download_file, extract_links, HttpError, HttpResponse
 from jarvis_ai.tools.docs import pdf_text, DocError, sniff_verification_tokens
 from jarvis_ai.brain.mission import MissionRunner, MissionError
-from jarvis_ai.voice.stt import transcribe
+from jarvis_ai.voice.stt import transcribe, is_stt_available
 from jarvis_ai.voice.tts import speak
 from jarvis_ai.vision.screen import ScreenRegion, ocr_screen
 from jarvis_ai.integrations.moltbook import create_post as moltbook_create_post, MoltbookError
@@ -59,10 +59,19 @@ class JarvisAgent:
     def _generate_with_fallback(self, prompt: str, system: Optional[str] = None, force_local: bool = False) -> LLMResponse:
         """Generate a response using the 3-tier fallback (Groq -> OpenAI -> Ollama)."""
         llm_settings = self.settings.get("llm", {})
-        provider = llm_settings.get("provider", "hybrid")
+        # Normalize provider and auto-upgrade from pure local to hybrid when a
+        # cloud key is configured. This ensures that if you have a Groq/OpenAI
+        # key set in settings.yaml, JARVIS will actually use it instead of
+        # staying locked to the local backend.
+        provider = str(llm_settings.get("provider", "hybrid") or "hybrid").lower()
         groq_key = (llm_settings.get("groq", {}) or {}).get("api_key") or ""
         openai_key = (llm_settings.get("openai", {}) or {}).get("api_key") or ""
         now = time.time()
+
+        # If the config says "ollama" but a cloud key is present, treat this as
+        # hybrid so Groq/OpenAI are tried first and local remains a fallback.
+        if provider == "ollama" and (groq_key or openai_key):
+            provider = "hybrid"
 
         # If explicitly local or provider is locked to ollama
         if force_local or provider == "ollama":
@@ -174,6 +183,11 @@ class JarvisAgent:
             kill_switches = {"exit", "quit", "kill", "stop"}
         voice_settings = self.settings.get("voice", {})
         self.voice_enabled = bool(voice_settings.get("enabled", False))
+        # If STT dependencies (keyboard/sounddevice/vosk) are unavailable,
+        # disable voice once up-front to avoid noisy errors on every loop.
+        if self.voice_enabled and not is_stt_available():
+            print("[JARVIS][STT] Voice input disabled (missing keyboard/sounddevice/vosk). Using text input only.", flush=True)
+            self.voice_enabled = False
         stt_settings = voice_settings.get("stt", {})
         push_to_talk_key = str(stt_settings.get("push_to_talk_key", "right ctrl"))
         # Model path is relative to project root (one level above jarvis_ai)
