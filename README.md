@@ -1,196 +1,246 @@
-🤖 J.A.R.V.I.S — Autonomous Triple-Brain AI Agent
-A Real Local AI System Inspired by Iron Man
 
-J.A.R.V.I.S (Just A Rather Very Intelligent System) is a next-generation autonomous AI agent engineered to function as a real computer-controlling assistant — not a chatbot, not a wrapper, but a true agentic system capable of reasoning, planning, acting, and learning on your machine.
+# 🤖 J.A.R.V.I.S — Autonomous Triple-Brain AI Agent
 
-⚡ Built from scratch using Python, offline models, and system automation
-🧠 Runs locally with optional cloud intelligence
-🔐 Privacy-first architecture
+**A Real Local AI System Inspired by Iron Man**
+
+J.A.R.V.I.S (Just A Rather Very Intelligent System) is a next-generation autonomous AI agent engineered to function as a real computer-controlling assistant — **not a chatbot, not a wrapper**, but a true agentic system capable of reasoning, planning, acting, and learning on your machine.
+
+⚡ Built from scratch using Python, offline models, and system automation  
+🧠 Runs locally with optional cloud intelligence  
+🔐 Privacy-first architecture  
 🖥️ Full computer control capabilities
 
-🏆 PROJECT STATUS — ELITE AGENT SYSTEM
+---
 
-✔ Autonomous Agent Architecture
-✔ Triple-Brain Hybrid Intelligence
-✔ Offline Operation Capability
-✔ Voice + Vision Interface
-✔ Real System Control
-✔ Experience-Based Learning
+## 🏆 Project Status — ELITE AGENT SYSTEM
+
+✔ Autonomous Agent Architecture  
+✔ Triple-Brain Hybrid Intelligence  
+✔ Offline Operation Capability  
+✔ Voice + Vision Interface  
+✔ Real System Control  
+✔ Experience-Based Learning  
 
 This is closer to a real personal AI operating system than a typical assistant.
 
-🧠 TRIPLE-BRAIN ARCHITECTURE
+---
+
+## 🧠 Triple-Brain Architecture
 
 A dynamic intelligence routing system that selects the optimal brain based on task requirements.
 
-Brain	Purpose	Technology	When Used
-🧊 Offline Core	Privacy & Control	Ollama + Mistral	Sensitive/system tasks
-⚡ Speed Brain	Ultra-Fast Reasoning	Groq API	Time-critical queries
-🌐 Intelligence Brain	Deep Reasoning	OpenAI API	Complex/creative work
-🧠 Smart Brain Switching
+| Brain | Purpose | Technology | When Used |
+|-------|---------|------------|-----------|
+| 🧊 Offline Core | Privacy & Control | Ollama + Mistral | Sensitive/system tasks |
+| ⚡ Speed Brain | Ultra-Fast Reasoning | Groq API | Time-critical queries |
+| 🌐 Intelligence Brain | Deep Reasoning | OpenAI API | Complex/creative work |
 
-J.A.R.V.I.S automatically balancesڍ selects:
 
-🔒 Offline → Privacy
-⚡ Groq → Speed
-🧠 OpenAI → Intelligence
+**Smart Brain Switching:**  
+J.A.R.V.I.S automatically balances and selects:
 
-Result: A resilient hybrid AI system balancing
-Privacy ↔ Speed ↔ Intelligence
+- 🔒 Offline → Privacy  
+- ⚡ Groq → Speed  
+- 🧠 OpenAI → Intelligence  
 
-🎤 HUMAN-LEVEL INTERFACE
-🎙️ Voice System
+**Result:** A resilient hybrid AI system balancing **Privacy ↔ Speed ↔ Intelligence**
 
-✔ Offline Speech Recognition (Vosk)
-✔ Text-to-Speech (pyttsx3)
-✔ Push-to-Talk
-✔ Console fallback
+---
 
-🖥️ FULL COMPUTER CONTROL
+## 🎤 Human-Level Interface — Voice System
 
-J.A.R.V.I.S acts as a digital operator
+✔ Offline Speech Recognition (**Vosk**)  
+✔ Text-to-Speech (**pyttsx3**)  
+✔ Push-to-Talk  
+✔ Console fallback  
 
-✔ Launch & control applications
-✔ Mouse & keyboard automation
-✔ File system operations
-✔ Process management
-✔ System monitoring
+---
 
-👁️ SCREEN AWARENESS (VISION)
+## 🖥️ Full Computer Control
 
-OCR via Tesseract enables:
+J.A.R.V.I.S acts as a digital operator:
 
-📖 Reading visible text
-🧠 Context understanding
-🖱️ UI interaction
+✔ Launch & control applications  
+✔ Mouse & keyboard automation  
+✔ File system operations  
+✔ Process management  
+✔ System monitoring  
 
-🌐 AUTONOMOUS WEB AGENT
+---
+
+## 👁️ Screen Awareness (Vision)
+
+OCR via **Tesseract** enables:
+
+📖 Reading visible text  
+🧠 Context understanding  
+🖱️ UI interaction  
+
+---
+
+## 🌐 Autonomous Web Agent
 
 J.A.R.V.I.S can:
 
-🌍 Navigate websites
-📝 Fill forms
-📨 Send requests
-🔎 Extract data
-🆕 Complete workflows
+🌍 Navigate websites  
+📝 Fill forms  
+📨 Send requests  
+🔎 Extract data  
+🆕 Complete workflows  
 
-🤖 EXPERIENCE-BASED LEARNING
+---
+
+## 🤖 Experience-Based Learning
 
 Improves over time using:
 
-📜 Action logs
-🧠 Skill memory
-🤔 Reflection
-📘 Lessons learned
+📜 Action logs  
+🧠 Skill memory  
+🤔 Reflection  
+📘 Lessons learned  
 
-Learns without retraining models
+**Learns without retraining models**
 
-🔒 SAFETY SYSTEM
+---
 
-🛑 Kill switch commands
-📋 App allowlists
-❗ Confirmation prompts
-🔐 Secure boundaries
-📑 Audit logs
+## 🔒 Safety System
 
-🧱 BUILT FROM SCRATCH
+🛑 Kill switch commands  
+📋 App allowlists  
+❗ Confirmation prompts  
+🔐 Secure boundaries  
+📑 Audit logs  
+
+---
+
+## 🧱 Built From Scratch
 
 End-to-end custom implementation:
 
-🧠 Agent architecture
-🗺️ Planner
-💾 Memory system
-🧰 Tool framework
-🎤 Voice interface
-⚙️ Automation engine
-🔐 Safety layer
+🧠 Agent architecture  
+🗺️ Planner  
+💾 Memory system  
+🧰 Tool framework  
+🎤 Voice interface  
+⚙️ Automation engine  
+🔐 Safety layer  
 
-▶️ QUICK START — WINDOWS SETUP
-🧩 Prerequisites
+---
 
-Windows 10/11
+## ▶️ Quick Start — Windows Setup
 
-Python 3.10+
+### 🧩 Prerequisites
 
-VS Code
+- Windows 10/11  
+- Python 3.10+  
+- VS Code  
+- Internet (initial setup only)  
 
-Internet (initial setup only)
 
-📥 1. Clone Repository
+### 📥 1. Clone Repository
+```bash
 git clone https://github.com/TharinduThilakshana0thildezo/J.A.R.V.I.S.git
 cd J.A.R.V.I.S
+````
 
-🧪 2. Virtual Environment
+
+### 🧪 2. Virtual Environment
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
 
-📦 3. Install Dependencies
+
+### 📦 3. Install Dependencies
+
+```bash
 pip install pyautogui psutil pywinauto keyboard vosk sounddevice pyttsx3 mss pillow pytesseract pytest pyyaml requests
+```
 
-🧠 4. Offline Brain Setup (Ollama + Mistral)
 
-Download Ollama → https://ollama.com/download
+### 🧠 4. Offline Brain Setup (Ollama + Mistral)
 
+* Download Ollama: [https://ollama.com/download](https://ollama.com/download)
+* Run:
+
+```bash
 ollama --version
 ollama pull mistral
 ollama run mistral "Hello from local JARVIS"
+```
 
-🎤 5. Voice Recognition (Vosk)
 
-Download model → https://alphacephei.com/vosk/models
+### 🎤 5. Voice Recognition (Vosk)
 
-Extract to:
+* Download model: [https://alphacephei.com/vosk/models](https://alphacephei.com/vosk/models)
+* Extract to:
 
+```
 jarvis_ai/models/vosk-model-small-en-us-0.15
+```
 
-👁️ 6. OCR Engine (Tesseract)
 
-Download → https://github.com/UB-Mannheim/tesseract/wiki
+### 👁️ 6. OCR Engine (Tesseract)
 
-Add to PATH.
+* Download: [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
+* Add to PATH
 
-⚙️ 7. Configure Settings
+### ⚙️ 7. Configure Settings
 
 Open:
 
+```
 jarvis_ai/config/settings.yaml
+```
 
-🧠 Triple Brain
+**Triple Brain**
+
+```yaml
 ollama.base_url: http://localhost:11434
 ollama.model: mistral
-
 groq.api_key: YOUR_GROQ_API_KEY
 openai.api_key: YOUR_OPENAI_API_KEY
+```
 
-🎤 Voice
+**Voice**
+
+```yaml
 voice.enabled: true
 voice.stt.model_path: jarvis_ai/models/vosk-model-small-en-us-0.15
 voice.stt.push_to_talk_key: right ctrl
+```
 
-👁️ Vision
+**Vision**
+
+```yaml
 vision.ocr.enabled: true
+```
 
-🔒 Safety
+**Safety**
+
+```yaml
 safety.allowlist_apps: [trusted apps]
 safety.kill_switch_commands: ["STOP", "KILL JARVIS"]
+```
 
-🚀 8. Run J.A.R.V.I.S
+
+### 🚀 8. Run J.A.R.V.I.S
+
+```bash
 python jarvis_ai\main.py
+```
+
+Initialization includes: Brain modules, Voice interface, Memory system, Tool framework
+
+### 🎤 9. Voice Usage
+
+* Hold **Right Ctrl → Speak → Release → Execute**
+
+---
 
 
-Initialization includes:
-
-🧠 Brain modules
-🎤 Voice interface
-💾 Memory system
-🧰 Tool framework
-
-🎤 9. Voice Usage
-
-Hold Right Ctrl → Speak
-Release → Execute
-
-🧪 TECHNICAL SIGNIFICANCE
+## 🧪 Technical Significance
 
 This project demonstrates:
 
@@ -200,45 +250,45 @@ This project demonstrates:
 🧊 Offline AI systems
 🔒 Safety-constrained automation
 
-Represents the direction of future personal AI systems.
+Represents the **direction of future personal AI systems**.
 
-⚠️ REALITY VS FICTION
+---
 
-Inspired by cinematic AI — but this is a real working system, not fictional omnipotence.
+## ⚠️ Reality vs Fiction
 
-📊 ROADMAP
+Inspired by cinematic AI — but this is a **real working system**, not fictional omnipotence.
+
+---
+
+## 📊 Roadmap
 
 Planned enhancements:
 
-Wake-word activation
+* Wake-word activation
+* Long-term memory graph
+* Multi-agent coordination
+* Visual UI
+* Plugin ecosystem
+* Self-improvement loop
 
-Long-term memory graph
+---
 
-Multi-agent coordination
+## 📩 Contact & Collaboration
 
-Visual UI
+Interested in architecture, research, or collaboration? Reach out directly.
 
-Plugin ecosystem
+---
 
-Self-improvement loop
-
-📩 CONTACT & COLLABORATION
-
-Interested in architecture, research, or collaboration?
-
-Reach out directly.
-
-⭐ WHY THIS PROJECT STANDS OUT
+## ⭐ Why This Project Stands Out
 
 Most assistants are:
-
 ❌ Chat interfaces
 ❌ Cloud-dependent
 ❌ Passive
 
 J.A.R.V.I.S is:
-
 ✅ Autonomous
 ✅ Local-first
 ✅ Action-capable
 ✅ Hybrid intelligent
+
